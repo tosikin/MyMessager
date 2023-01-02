@@ -5,6 +5,6 @@ using Newtonsoft.Json;
 Message message = new Message("Anton", "Hello", DateTime.UtcNow);
 string output = JsonConvert.SerializeObject(message);
 Console.WriteLine(output);
-Message deserilazedMes = JsonConvert.DeserializeObject<Message>(output);
+Message? deserilazedMes = JsonConvert.DeserializeObject<Message>(output);
 Console.WriteLine(deserilazedMes);
 //Console.WriteLine(message.ToString());
