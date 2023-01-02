@@ -1,2 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+using MyMessager;
+
+Message message = new Message();
+Console.WriteLine(message.ToString());
