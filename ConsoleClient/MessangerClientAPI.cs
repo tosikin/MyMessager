@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyMessager
 {
-    internal class MessangerClientAPI
+    public class MessangerClientAPI
     {
         public Message GetMessage(int MessageId)
         {

@@ -6,5 +6,15 @@ namespace WindowsFormsClient
         {
             InitializeComponent();
         }
+
+        private void ú000000000000000_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SendButton_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
