@@ -12,7 +12,7 @@ namespace MyMessager
     {
         public Message GetMessage(int MessageId)
         {
-            WebRequest request = WebRequest.Create($"https://localhost:7095/api/Messanger{MessageId.ToString()}");
+            WebRequest request = WebRequest.Create($"http://localhost:5000/api/Messanger/{MessageId.ToString()}");
             request.Method = "Get";
             WebResponse response= request.GetResponse();
             string status = ((HttpWebResponse)response).StatusDescription;
@@ -32,7 +32,7 @@ namespace MyMessager
 
         public bool SendMessage(Message msg)
         {
-            WebRequest request = WebRequest.Create($"https://localhost:7095/api/Messanger{msg.ToString()}");
+            WebRequest request = WebRequest.Create($"http://localhost:5000/api/Messanger/");
             request.Method= "POST";
             string postData = JsonConvert.SerializeObject(msg);
             byte[] array = Encoding.UTF8.GetBytes(postData);
@@ -41,7 +41,7 @@ namespace MyMessager
             Stream stream = request.GetRequestStream();
             stream.Write(array, 0, array.Length);
             stream.Close();
-            WebResponse response= request.GetResponse();
+            WebResponse response = request.GetResponse();
             stream = response.GetResponseStream();
             StreamReader streamReader = new StreamReader(stream);
             string responseFromServer = streamReader.ReadToEnd();

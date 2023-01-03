@@ -18,13 +18,21 @@ MessangerClientAPI API = new MessangerClientAPI();
 
 }
 MessageId = 1;
+Console.WriteLine("Ener your Name.");
 UserName = Console.ReadLine();
 string msgText = "";
 while (msgText != "exit")
 {
-    Message message = new Message(UserName,msgText,DateTime.Now);
-    API.SendMessage(message);
+    Thread thread = new Thread(new ThreadStart(GetNewMessages));
+    thread.Start();
+    msgText = Console.ReadLine();
+    if( !string.IsNullOrEmpty(msgText))
+    {
+        Message message = new Message(UserName, msgText, DateTime.Now);
+        API.SendMessage(message);
+    }
 }
+
 //Message message = new Message("Anton", "Hello", DateTime.UtcNow);
 //string output = JsonConvert.SerializeObject(message);
 //Console.WriteLine(output);

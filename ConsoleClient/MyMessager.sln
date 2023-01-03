@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMessager", "MyMessager.csproj", "{4E82320D-63BD-4861-862A-9BA52686A0B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "..\Server\Server.csproj", "{8178BC9B-FB1D-4D65-B3FE-90AF0C49C981}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server", "..\Server\Server.csproj", "{8178BC9B-FB1D-4D65-B3FE-90AF0C49C981}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient2", "..\ConsoleClient2\ConsoleClient2.csproj", "{17D4C42E-3A82-4F7F-8C29-8B604886B6B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8178BC9B-FB1D-4D65-B3FE-90AF0C49C981}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8178BC9B-FB1D-4D65-B3FE-90AF0C49C981}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8178BC9B-FB1D-4D65-B3FE-90AF0C49C981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17D4C42E-3A82-4F7F-8C29-8B604886B6B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17D4C42E-3A82-4F7F-8C29-8B604886B6B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17D4C42E-3A82-4F7F-8C29-8B604886B6B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17D4C42E-3A82-4F7F-8C29-8B604886B6B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
