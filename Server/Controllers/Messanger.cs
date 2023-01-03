@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MyMessager;
+using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,24 +11,31 @@ namespace Server.Controllers
     [ApiController]
     public class Messanger : ControllerBase
     {
-
+        static List<Message> ListOfMessages = new List<Message>();
         // GET api/<Messanger>/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return "value" + id.ToString();
+            string OutputString = "Not found";
+            if ((id < ListOfMessages.Count) && (id >= 0))
+            {
+                OutputString = JsonConvert.SerializeObject(ListOfMessages[id]);
+            }
+            Console.WriteLine($"Запрошено сообщение{id} : {OutputString}");
+            return OutputString;
         }
 
         // POST api/<Messanger>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult SendMessage([FromBody] Message msg)
         {
-        }
-
-        // PUT api/<Messanger>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
+            if (msg == null)
+            {
+                return BadRequest();
+            }
+            ListOfMessages.Add(msg);
+            Console.WriteLine($"Всего сообщений:{ListOfMessages.Count} Посланное сообщение: {msg}");
+            return new OkResult();
         }
 
         // DELETE api/<Messanger>/5
