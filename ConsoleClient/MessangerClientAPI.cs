@@ -10,9 +10,21 @@ namespace MyMessager
 {
     public class MessangerClientAPI
     {
+        private static readonly HttpClient client = new HttpClient();
+
+        public async Task<Message> GetMessageHTTPAsync(int messageID)
+        {
+            var responseString = await client.GetStringAsync($"http://localhost:5000/api/Messanger/{messageID}");
+            if (responseString != null)
+            {
+                Message deserilaizedMessage = JsonConvert.DeserializeObject<Message>(responseString);
+                return deserilaizedMessage;
+            }
+            return null;
+        }
         public Message GetMessage(int MessageId)
         {
-            WebRequest request = WebRequest.Create($"http://localhost:5000/api/Messanger/{MessageId.ToString()}");
+            WebRequest request = WebRequest.Create($"http://localhost:5000/api/Messanger/{MessageId}");
             request.Method = "Get";
             WebResponse response= request.GetResponse();
             string status = ((HttpWebResponse)response).StatusDescription;

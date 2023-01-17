@@ -32,7 +32,7 @@
             this.SendButton = new System.Windows.Forms.Button();
             this.MessagesLB = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.UseerNameTB = new System.Windows.Forms.TextBox();
+            this.UserNameTB = new System.Windows.Forms.TextBox();
             this.MessageTB = new System.Windows.Forms.TextBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
@@ -65,12 +65,13 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "User Name";
             // 
-            // UseerNameTB
+            // UserNameTB
             // 
-            this.UseerNameTB.Location = new System.Drawing.Point(95, 9);
-            this.UseerNameTB.Name = "UseerNameTB";
-            this.UseerNameTB.Size = new System.Drawing.Size(100, 23);
-            this.UseerNameTB.TabIndex = 3;
+            this.UserNameTB.Location = new System.Drawing.Point(95, 9);
+            this.UserNameTB.Name = "UserNameTB";
+            this.UserNameTB.Size = new System.Drawing.Size(100, 23);
+            this.UserNameTB.TabIndex = 3;
+            this.UserNameTB.TextChanged += new System.EventHandler(this.UseerNameTB_TextChanged);
             // 
             // MessageTB
             // 
@@ -83,7 +84,7 @@
             // 
             this.timer.Enabled = true;
             this.timer.Interval = 1000;
-            this.timer.Tick += new System.EventHandler(this.ъ000000000000000_Tick);
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // Form1
             // 
@@ -91,7 +92,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(472, 350);
             this.Controls.Add(this.MessageTB);
-            this.Controls.Add(this.UseerNameTB);
+            this.Controls.Add(this.UserNameTB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.MessagesLB);
             this.Controls.Add(this.SendButton);
@@ -107,7 +108,7 @@
         private Button SendButton;
         private ListBox MessagesLB;
         private Label label1;
-        private TextBox UseerNameTB;
+        private TextBox UserNameTB;
         private TextBox MessageTB;
         private System.Windows.Forms.Timer timer;
     }
